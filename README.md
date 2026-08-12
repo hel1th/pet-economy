@@ -1,7 +1,17 @@
-# Virtual Pet Economy (Pet Progression Engine)
+<h1 align="center">Virtual Pet Economy (Pet Progression Engine)</h1>
 
-Игровое ядро проекта: доменная модель виртуального питомца и экономика прогрессии. Данный модуль отвечает за удержание пользователей (retention), расчет опыта и безопасную выдачу наград.
+<p align="center">
+  Игровое ядро маркетплейса: доменная модель виртуального питомца и экономика прогрессии.<br>
+  Удержание пользователей (retention), расчёт опыта и безопасная выдача наград.
+</p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Go-1.25-00ADD8?logo=go&logoColor=white" alt="Go 1.25">
+  <img src="https://img.shields.io/badge/Architecture-Domain%20Driven-FF6B6B" alt="Domain Driven Design">
+  <img src="https://img.shields.io/badge/Coverage-97.4%25-22C55E" alt="97.4% Coverage">
+</p>
+
+---
 ## 📚 Продуктовая документация
 
 - [tamagochi-spec.md](tamagochi-spec.md) — продуктовая спецификация (матрица экономики, уровни, достижения).
