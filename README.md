@@ -1,14 +1,16 @@
-<h1 align="center">Virtual Pet Economy (Pet Progression Engine)</h1>
+<p align="center">
+<h1 align="center">Virtual Pet Economy</h1>
 
 <p align="center">
   Игровое ядро маркетплейса: доменная модель виртуального питомца и экономика прогрессии.<br>
-  Удержание пользователей (retention), расчёт опыта и безопасная выдача наград.
+  Удержание пользователей, расчёт опыта и безопасная выдача наград.
 </p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Go-1.25-00ADD8?logo=go&logoColor=white" alt="Go 1.25">
-  <img src="https://img.shields.io/badge/Methodology-TDD-FF6B6B" alt="Test Driven Development">
   <img src="https://img.shields.io/badge/Coverage-97.4%25-22C55E" alt="97.4% Coverage">
+  <img src="https://img.shields.io/badge/Architecture-DDD-8A2BE2" alt="Domain Driven Design">
+  <img src="https://img.shields.io/badge/Code_Quality-A+-success" alt="Code Quality">
 </p>
 
 ---
@@ -16,6 +18,13 @@
 
 - [tamagochi-spec.md](tamagochi-spec.md) — продуктовая спецификация (матрица экономики, уровни, достижения).
 - [spec-diff.md](spec-diff.md) — описание ограничений MVP.
+
+## 📂 Структура проекта
+
+- **`pet/`** — Ядро экономики (Pet Progression Engine). Бизнес-логика тамагочи: расчеты XP, антифрод, стейт-машина состояний питомца и ленивая деградация параметров. Доменный слой изолирован от инфраструктуры.
+- **`games/bukovki/`** — Игровой модуль "Буковки" (аналог Wordle). Отдельный пакет, содержащий игровую логику, работу со словарем и механизм начисления опыта за победы.
+- **`app/`** — Слой приложения и инфраструктуры. Содержит точку входа (main), настройку роутинга, DI и HTTP-сервер. Добавлен для сборки и запуска приложения.
+- **`shared/`** — Общие типы и утилиты. Вынесены в отдельный пакет для переиспользования между `pet`, `games` и `app`, чтобы избежать циклических зависимостей при компиляции.
 
 ## 🎯 Основная идея (Экономика как драйвер Retention)
 
